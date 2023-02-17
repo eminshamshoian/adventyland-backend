@@ -1,7 +1,7 @@
-import { config } from './config';
+import { config } from '@root/config';
 import express, { Express } from 'express';
-import { AdventyServer } from './setupServer';
-import databaseConnection from './setupDatabase';
+import { AdventyServer } from '@root/setupServer';
+import databaseConnection from '@root/setupDatabase';
 
 class Application {
   public initialize(): void {
@@ -14,6 +14,7 @@ class Application {
 
   private loadConfig(): void {
     config.validateConfig();
+    config.cloudinaryConfig();
   }
 }
 
